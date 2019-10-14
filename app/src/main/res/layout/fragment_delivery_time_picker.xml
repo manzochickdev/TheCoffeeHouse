@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <RelativeLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".addresspicker.DeliveryTimePickerFragment">
+
+        <TextView
+            android:id="@+id/tv_time_holder"
+            setFont="@{Font.REGULAR}"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="Pick a delivery time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:layout_marginBottom="16dp"
+            android:id="@+id/tv_time"
+            setFont="@{Font.SEMIBOLD}"
+            android:textColor="@color/black"
+            android:layout_below="@id/tv_time_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <View
+            android:layout_centerHorizontal="true"
+            android:id="@+id/center_holder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"></View>
+
+        <Spinner
+            android:layout_marginRight="8dp"
+            android:id="@+id/sp_date"
+            android:layout_below="@id/tv_time"
+            android:layout_toLeftOf="@id/center_holder"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Spinner>
+
+        <Spinner
+            android:layout_marginLeft="8dp"
+            android:id="@+id/sp_hour"
+            android:layout_below="@id/tv_time"
+            android:layout_toRightOf="@id/center_holder"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Spinner>
+        <TextView
+            android:id="@+id/btn_pick"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/sp_date"
+            setFont="@{Font.SEMIBOLD}"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Pick time"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:background="@drawable/bg_curved_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+
+    </RelativeLayout>
+</layout>

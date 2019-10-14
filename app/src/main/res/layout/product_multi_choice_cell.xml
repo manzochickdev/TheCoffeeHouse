@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="selection"
+            type="xyz.manzodev.thecoffeehouse.order.model.ProductSelection" />
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+        <import type="android.view.View"></import>
+        <import type="xyz.manzodev.thecoffeehouse.utils.StringUtils"></import>
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/choice_container"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_centerVertical="true"
+            android:id="@+id/cb_checked"
+            android:layout_width="24dp"
+            android:layout_height="24dp">
+            <View
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></View>
+            <View
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:layout_width="21dp"
+                android:layout_height="21dp"></View>
+            <View
+                android:layout_gravity="center"
+                android:visibility="@{selection.selected ? View.VISIBLE : View.GONE}"
+                android:background="@color/colorPrimary"
+                android:src="@color/colorPrimary"
+                android:layout_width="18dp"
+                android:layout_height="18dp"></View>
+        </FrameLayout>
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/cb_checked"
+            android:textSize="16sp"
+            android:text="@{selection.name}"
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            setFont="@{Font.REGULAR}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@{StringUtils.formatPrice(selection.price)}"></TextView>
+    </RelativeLayout>
+</layout>

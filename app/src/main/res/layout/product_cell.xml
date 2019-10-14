@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="product"
+            type="xyz.manzodev.thecoffeehouse.order.model.Product" />
+        <import type="xyz.manzodev.thecoffeehouse.utils.StringUtils"></import>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:id="@+id/product_holder"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="26"
+            android:orientation="vertical">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                setImageUrl="@{product.imgUrl}"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"></ImageView>
+            <RelativeLayout
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7">
+                <TextView
+                    android:id="@+id/tv_disp_selection"
+                    android:layout_marginBottom="12dp"
+                    android:layout_alignParentBottom="true"
+                    setFont="@{Font.REGULAR}"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/black"
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textSize="16sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_above="@id/tv_disp_selection"
+                    android:text="@{product.name}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3.8">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorDisabled"></View>
+                <TextView
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:text="@{StringUtils.formatPrice(product.dispPrice)}"
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+                <ImageView
+                    android:src="@drawable/img_icons_ic_add"
+                    android:layout_marginRight="8dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"></ImageView>
+            </FrameLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

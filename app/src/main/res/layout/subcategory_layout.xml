@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/view_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            android:layout_above="@id/btn_dismiss"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:text="Category"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:fitsSystemWindows="true"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:background="@color/colorBackground"
+                    android:id="@+id/rv_subcategory"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:backgroundTint="@color/colorPrimary"
+            app:fabCustomSize="@dimen/fab"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="130dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btn_dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </RelativeLayout>
+</layout>

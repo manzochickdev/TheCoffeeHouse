@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <LinearLayout
+        android:layout_marginBottom="2dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            setFont="@{Font.SEMIBOLD}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:id="@+id/tv_sub_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"></TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginRight="8dp"
+            android:id="@+id/rv_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</layout>

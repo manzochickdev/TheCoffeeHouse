@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="order"
+            type="xyz.manzodev.thecoffeehouse.OrderModel" />
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/order_history_container"
+        android:padding="16dp"
+        android:background="@drawable/bg_curved_white"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_bike"
+            android:src="@drawable/img_delivery"
+            android:layout_width="@dimen/icon"
+            android:layout_height="@dimen/icon"></ImageView>
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            setFont="@{Font.REGULAR}"
+            android:text="@{order.totalPrice}"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_total_price"
+            android:layout_toRightOf="@id/iv_bike"
+            android:id="@+id/layout_order_info"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                setFont="@{Font.SEMIBOLD}"
+                android:ellipsize="end"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="@{order.address}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+            <TextView
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                setFont="@{Font.REGULAR}"
+                android:textColor="@color/colorPrimary"
+                android:text="Success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+            <TextView
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                setFont="@{Font.REGULAR}"
+                android:textColor="@color/black"
+                android:text="@{order.dateModified}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

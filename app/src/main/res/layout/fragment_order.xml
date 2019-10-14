@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="cart"
+            type="xyz.manzodev.thecoffeehouse.CartInfo" />
+        <import type="android.view.View"></import>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <RelativeLayout
+        android:background="@color/colorBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".order.OrderFragment">
+
+        <RelativeLayout
+            android:background="@drawable/bg_underline"
+            android:id="@+id/layout_place"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <ImageView
+                android:id="@+id/iv_bike"
+                android:layout_marginRight="12dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/img_icons_bike"
+                android:layout_width="24dp"
+                android:layout_height="24dp"></ImageView>
+            <TextView
+                android:layout_toRightOf="@id/iv_bike"
+                android:id="@+id/tv_delivery_holder"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:text="Delivery to"
+                android:textColor="@color/black"
+                setFont="@{Font.REGULAR}"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+            <TextView
+                android:layout_marginRight="8dp"
+                android:id="@+id/tv_change_address"
+                setFont="@{Font.SEMIBOLD}"
+                android:textColor="@color/colorPrimary"
+                android:text="CHANGE"
+                android:layout_below="@id/tv_delivery_holder"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+            <TextView
+                android:hint="Choose a delivery address"
+                setFont="@{Font.BOLD}"
+                android:textSize="16sp"
+                android:id="@+id/tv_address"
+                android:ellipsize="end"
+                android:layout_below="@id/tv_delivery_holder"
+                android:layout_toLeftOf="@id/tv_change_address"
+                android:layout_alignLeft="@id/tv_delivery_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+        </RelativeLayout>
+        <ImageView
+            android:tint="@color/colorDisabled"
+            android:layout_alignBottom="@id/tab_category"
+            android:layout_alignTop="@id/tab_category"
+            android:id="@+id/iv_search"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/layout_place"
+            android:src="@drawable/ic_search_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"></ImageView>
+        <com.google.android.material.tabs.TabLayout
+            android:layout_toLeftOf="@id/iv_search"
+            app:tabTextAppearance="@style/CustomTabView"
+            app:tabIndicatorColor="@color/colorPrimary"
+            android:layout_below="@id/layout_place"
+            android:id="@+id/tab_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_above="@id/cart_layout"
+            android:background="@color/colorBackground"
+            android:layout_below="@id/tab_category"
+            android:id="@+id/vp_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/cart_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:visibility="@{cart.quantity>0 ? View.VISIBLE : View.GONE}"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+                <TextView
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:background="@drawable/rect_border_white"
+                    android:text="@{Integer.toString(cart.quantity)}"
+                    android:layout_marginLeft="12dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"></TextView>
+                <TextView
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="VIEW CART"
+                    android:textColor="@android:color/white"></TextView>
+                <TextView
+                    setFont="@{Font.REGULAR}"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:text="@{Long.toString(cart.totalPrice)}"
+                    android:layout_marginRight="12dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+            </RelativeLayout>
+        </FrameLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:elevation="0dp"
+            android:backgroundTint="@color/colorPrimary"
+            app:fabCustomSize="@dimen/fab"
+            android:id="@+id/btn_subcategory"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/ic_category"
+            android:layout_marginBottom="24dp"
+            android:layout_above="@id/cart_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </RelativeLayout>
+</layout>

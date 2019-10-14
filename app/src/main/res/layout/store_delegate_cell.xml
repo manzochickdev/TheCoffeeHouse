@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_name"
+            setFont="@{Font.REGULAR}"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:background="@android:color/white"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <View
+            android:layout_gravity="bottom"
+            android:background="@color/colorDisabled"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </FrameLayout>
+</layout>

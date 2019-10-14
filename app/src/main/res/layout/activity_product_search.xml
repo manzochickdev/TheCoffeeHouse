@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <LinearLayout
+        android:background="@color/colorBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".order.ProductSearchActivity"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:background="@drawable/bg_underline"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <ImageView
+                android:id="@+id/iv_back"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"></ImageView>
+            <EditText
+                android:textSize="14sp"
+                android:hint="Find products"
+                setFont="@{Font.REGULAR}"
+                android:background="@drawable/bg_underline"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/iv_back"
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></EditText>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</layout>

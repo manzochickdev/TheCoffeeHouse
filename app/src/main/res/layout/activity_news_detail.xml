@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="news"
+            type="xyz.manzodev.thecoffeehouse.home.model.News" />
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.NewsDetailActivity">
+        <RelativeLayout
+            android:id="@+id/top_bar"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_underline"
+            android:layout_width="match_parent">
+            <ImageView
+                android:padding="8dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_dismiss"
+                android:src="@drawable/ic_back"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"></ImageView>
+            <TextView
+                android:textColor="@color/black"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_dismiss"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@{news.title}"
+                android:textSize="16sp"
+                setFont="@{Font.SEMIBOLD}"
+                ></TextView>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_below="@id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:scaleType="centerCrop"
+                    setImageUrl="@{news.imgUrl}"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"></ImageView>
+                <TextView
+                    android:lineSpacingExtra="8dp"
+                    android:textColor="@color/black"
+                    android:paddingTop="40dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{news.title}"></TextView>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/content_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="xyz.manzodev.thecoffeehouse.user.model.User" />
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+        <import type="android.view.View"></import>
+    </data>
+
+    <LinearLayout
+        android:background="@color/colorBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".account.AccountFragment">
+
+        <FrameLayout
+            android:id="@+id/layout_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:visibility="@{user!=null ? View.VISIBLE : View.GONE}"
+                android:background="@drawable/bg_underline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    setImageUrl="@{user.imgUrl}"
+                    android:id="@+id/iv_profile"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"></de.hdodenhof.circleimageview.CircleImageView>
+                <LinearLayout
+                    android:layout_toRightOf="@id/iv_profile"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        setFont="@{Font.SEMIBOLD}"
+                        android:textColor="@color/black"
+                        android:text="@{user.name}"
+                        android:textSize="18sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"></TextView>
+                    <TextView
+                        setFont="@{Font.SEMIBOLD}"
+                        android:textColor="@color/black"
+                        android:text="New Member"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:visibility="@{user==null ? View.VISIBLE : View.GONE}"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:tint="@color/white"
+                    android:src="@drawable/ic_profile"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"></ImageView>
+
+                <TextView
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textColor="@color/white"
+                    android:text="Sign in"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_now_playing"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_now_playing"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"></ImageView>
+                <TextView
+                    android:paddingBottom="14dp"
+                    android:paddingTop="14dp"
+                    android:paddingLeft="16dp"
+                    android:textColor="@color/black"
+                    android:text="Playing music"
+                    setFont="@{Font.REGULAR}"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/btn_order_history"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_order_history"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"></ImageView>
+                <TextView
+                    android:paddingBottom="14dp"
+                    android:paddingTop="14dp"
+                    android:paddingLeft="16dp"
+                    android:textColor="@color/black"
+                    android:text="Order history"
+                    setFont="@{Font.REGULAR}"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:tint="#080808"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_profile"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+                <TextView
+                    android:layout_marginLeft="2dp"
+                    android:paddingBottom="14dp"
+                    android:paddingTop="14dp"
+                    android:paddingLeft="16dp"
+                    android:textColor="@color/black"
+                    android:text="About"
+                    setFont="@{Font.REGULAR}"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:visibility="@{user!=null ? View.VISIBLE : View.GONE}"
+            android:paddingRight="16dp"
+            android:paddingBottom="12dp"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:textColor="@color/black"
+            android:text="Log out"
+            setFont="@{Font.REGULAR}"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+    </LinearLayout>
+</layout>

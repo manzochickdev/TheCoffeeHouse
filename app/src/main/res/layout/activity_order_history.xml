@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+        <variable
+            name="hasOrdered"
+            type="Boolean" />
+        <import type="android.view.View"></import>
+    </data>
+
+    <LinearLayout
+        android:background="@color/colorBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".account.orderhistory.OrderHistoryActivity">
+        <FrameLayout
+            android:background="@drawable/bg_underline"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <ImageView
+                android:layout_marginLeft="12dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_cancel"
+                android:layout_width="16dp"
+                android:layout_height="16dp"></ImageView>
+            <TextView
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                setFont="@{Font.SEMIBOLD}"
+                android:text="Order history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="16dp"
+                android:visibility="@{!hasOrdered ? View.VISIBLE : View.GONE}"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/img_delivery"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"></ImageView>
+                <TextView
+                    android:textColor="@color/black"
+                    setFont="@{Font.REGULAR}"
+                    android:text="You haven't order yet"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+
+                <TextView
+                    android:padding="12dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_curved_primary"
+                    android:text="Order now"
+                    setFont="@{Font.REGULAR}"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="@{hasOrdered ? View.VISIBLE : View.GONE}"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:id="@+id/rv_order_history"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>

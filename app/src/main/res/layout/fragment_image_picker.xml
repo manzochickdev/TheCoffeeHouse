@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".user.ImagePickerFragment">
+
+        <TextView
+            setFont="@{Font.REGULAR}"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select image from"
+            android:gravity="center"/>
+        <TextView
+            android:textColor="@color/blue"
+            setFont="@{Font.REGULAR}"
+            android:layout_marginTop="1dp"
+            android:id="@+id/btn_camera"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Camera"
+            android:gravity="center"/>
+        <TextView
+            android:textColor="@color/blue"
+            setFont="@{Font.REGULAR}"
+            android:layout_marginTop="1dp"
+            android:id="@+id/btn_storage"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Storage"
+            android:gravity="center"/>
+        <TextView
+            android:textColor="@color/blue"
+            setFont="@{Font.REGULAR}"
+            android:layout_marginTop="4dp"
+            android:id="@+id/btn_cancel"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</layout>

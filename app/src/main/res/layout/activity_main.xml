@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="selected"
+            type="Integer" />
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <View
+            android:id="@+id/bottom_holder"
+            android:layout_above="@id/bottom_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:background="@color/underline"></View>
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bottom_bar"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:id="@+id/btn_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@{selected==0 ? @drawable/ic_news_24px_organce : @drawable/ic_news_24px_black}"></ImageView>
+
+                <TextView
+                    setFont="@{Font.REGULAR}"
+                    android:text="News"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{selected==0 ? @color/colorPrimary : @color/colorDisabled}"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_order"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@{selected==1 ? @drawable/ic_delivery_24px_organce : @drawable/ic_delivery_24px_black}"></ImageView>
+
+                <TextView
+                    setFont="@{Font.REGULAR}"
+                    android:text="Delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{selected==1 ? @color/colorPrimary : @color/colorDisabled}"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_store"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@{selected==2 ? @drawable/ic_store_24px_organce : @drawable/ic_store_24px_black}"></ImageView>
+
+                <TextView
+                    setFont="@{Font.REGULAR}"
+                    android:text="Store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{selected==2 ? @color/colorPrimary : @color/colorDisabled}"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@{selected==3 ? @drawable/ic_person_24px_organce : @drawable/ic_person_24px_black}"></ImageView>
+
+                <TextView
+                    setFont="@{Font.REGULAR}"
+                    android:text="Account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{selected==3 ? @color/colorPrimary : @color/colorDisabled}"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_holder"></FrameLayout>
+
+    </RelativeLayout>
+</layout>

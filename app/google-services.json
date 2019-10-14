@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "582545511599",
+    "firebase_url": "https://themanzocoffee.firebaseio.com",
+    "project_id": "themanzocoffee",
+    "storage_bucket": "themanzocoffee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582545511599:android:1d33afcee204135c50b05a",
+        "android_client_info": {
+          "package_name": "xyz.manzodev.thecoffeehouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582545511599-aea9cui1u7m1l55hnfdsv250rqtlnln9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxEq3PzF_bqKXulJ2XAjvaJT5CCXS1E7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582545511599-aea9cui1u7m1l55hnfdsv250rqtlnln9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

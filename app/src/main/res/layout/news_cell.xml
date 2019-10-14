@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="news"
+            type="xyz.manzodev.thecoffeehouse.home.model.News" />
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginLeft="16dp"
+        android:id="@+id/news_holder"
+        android:orientation="vertical"
+        android:layout_width="220dp"
+        android:layout_height="300dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:gravity="center"
+            android:weightSum="12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                setImageUrl="@{news.imgUrl}"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:scaleType="centerCrop"></ImageView>
+
+            <TextView
+                android:gravity="top|left"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="8dp"
+                android:ellipsize="end"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                setFont="@{Font.SEMIBOLD}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:text="@{news.title}"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"></TextView>
+
+            <TextView
+                android:layout_marginTop="12dp"
+                android:gravity="top"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                setFont="@{Font.SEMIBOLD}"
+                android:textSize="14sp"
+                android:text="@{news.summary}"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.8"></TextView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.2">
+                <TextView
+                    android:layout_marginLeft="12dp"
+                    android:textColor="@color/colorPrimary"
+                    setFont="@{Font.REGULAR}"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/bordered_orange"
+                    android:id="@+id/btn_news_detail"
+                    android:text="Detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

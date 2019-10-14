@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="xyz.manzodev.thecoffeehouse.utils.Font"></import>
+    </data>
+
+    <FrameLayout
+        android:background="@color/colorBackground"
+        android:id="@+id/address_picker_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".addresspicker.AddressPickerActivity"
+            android:orientation="vertical"
+            android:background="@color/colorBackground">
+            <RelativeLayout
+                android:background="@drawable/bg_underline"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+                <ImageView
+                    android:id="@+id/iv_cancel"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:src="@drawable/ic_clear_black_24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"></ImageView>
+                <EditText
+                    android:textSize="14sp"
+                    android:layout_marginRight="12dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv_cancel"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="@drawable/et_search_background"
+                    android:id="@+id/et_place_autocomplete"
+                    android:hint="Delivery Address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></EditText>
+            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="2dp"
+                android:id="@+id/rv_address_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></View>
+
+            <LinearLayout
+                android:background="@color/white"
+
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_home_address"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        setFont="@{Font.REGULAR}"
+                        android:textColor="@color/black"
+                        android:text="Home address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp" />
+                    <TextView
+                        setFont="@{Font.SEMIBOLD}"
+                        android:textColor="@color/black"
+                        android:text="Home address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@color/underline"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+            <LinearLayout
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_office_address"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        setFont="@{Font.REGULAR}"
+                        android:textColor="@color/black"
+                        android:text="Work address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp" />
+                    <TextView
+                        setFont="@{Font.SEMIBOLD}"
+                        android:textColor="@color/black"
+                        android:text="Work address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@color/underline"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_curent_location"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        setFont="@{Font.REGULAR}"
+                        android:textColor="@color/black"
+                        android:text="Current address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp" />
+                    <TextView
+                        setFont="@{Font.SEMIBOLD}"
+                        android:textColor="@color/black"
+                        android:text="Current address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@color/underline"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/btn_map_picker"
+                android:background="@color/white"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_choose_location"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+                <TextView
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textColor="@color/black"
+                    android:text="Pick a location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <View
+                android:background="@color/underline"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                setFont="@{Font.SEMIBOLD}"
+                android:textSize="16sp"
+                android:text="Delivery time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="@android:color/white" />
+            <View
+                android:background="@color/underline"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+            <RelativeLayout
+                android:id="@+id/layout_default_time"
+                android:background="@color/white"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_hour"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_hour"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+                <TextView
+                    android:layout_toRightOf="@id/iv_hour"
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textColor="@color/black"
+                    android:text="@string/defaultDeliveryTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:id="@+id/iv_hour_check"
+                    android:layout_marginRight="12dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_ticked"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/underline"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+
+            <RelativeLayout
+                android:id="@+id/layout_pick_time"
+                android:background="@color/white"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_timer"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_hour_countdown"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_toRightOf="@id/iv_timer"
+                    setFont="@{Font.SEMIBOLD}"
+                    android:textColor="@color/black"
+                    android:text="Pick a time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/iv_timer_check"
+                    android:layout_marginRight="12dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_ticked"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"></ImageView>
+            </RelativeLayout>
+            <View
+                android:background="@color/underline"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>
